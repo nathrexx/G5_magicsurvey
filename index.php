@@ -26,17 +26,8 @@ if (isset($_SESSION["user_id"])) {
     
     <h1>Home</h1>
     
-    <?php if (isset($user)): ?>
+         <p><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></p>
         
-        <p>Hello <?= htmlspecialchars($user["name"]) ?></p>
-        
-        <p><a href="logout.php">Log out</a></p>
-        
-    <?php else: ?>
-        
-        <p><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></p>
-        
-    <?php endif; ?>
     
 </body>
 </html>
