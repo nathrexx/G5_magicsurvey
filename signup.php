@@ -24,7 +24,7 @@
 
         <div>
             <label for="email">Email</label>
-            <input type="text" id="Email" name="email">
+            <input type="email" id="Email" name="email">
         </div>
 
         <div>
@@ -34,18 +34,10 @@
         
         <div>
             <label for="password">Password</label>
-            <input type="text" id="Password" name="password">
+            <input type="password" id="Password" name="password">
         </div>
         
         <button>Sign up</button>
-    </form>
-
-    <form action="login.php">
-        <button type="submit">Login</button>
-    </form>
-
-    <form action="homepage.html">
-        <button type="submit">Continue Anonymously</button>
     </form>
     
 </body>
