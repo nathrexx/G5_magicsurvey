@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Survey</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>Create Survey</h1>
+
+    <form action="insert-survey.php" method="post" id="survey" novalidate>
+        <div>
+            <label for="code">Code</label>
+            <input type="text" id="Code" name="code">
+        </div>
+
+        <div>
+            <label for="name">Enter survey name</label>
+            <input type="text" id="Name" name="name">
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <input type="text" id="Description" name="description">
+        </div>
+
+        <div>
+            <label for="start_datetime">Start time</label>
+            <input type="text" id="StartTime" name="start_time">
+        </div>
+
+        <div>
+            <label for="end_datetime">End time</label>
+            <input type="text" id="EndTime" name="end_time">
+        </div>
+
+        <button type="submit">Add questions</button>
+
+    </form>
+
+
+</body>
+</html>
