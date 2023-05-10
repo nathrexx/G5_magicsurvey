@@ -1,6 +1,7 @@
 <?php
 
-$host = "localhost";
+//Change $local to "localhost" if not working
+$host = "localhost:3307";
 $dbname = "survey";
 $username = "root";
 $password = "";
