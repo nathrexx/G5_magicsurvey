@@ -26,6 +26,9 @@ if (mysqli_query($mysqli, $sql)) {
     echo "Error: " . mysqli_error($mysqli);
 }
 
+header("Location: homepage.php");
+
 // Close the database connection
 $mysqli->close();
 ?>
+

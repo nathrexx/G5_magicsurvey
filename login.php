@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             session_regenerate_id();
             
-            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_id"] = $user["user_id"];
             
             header("Location: homepage.html");
             exit;
@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $is_invalid = true;
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,6 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="password" id="password">
         
         <button>Log in</button>
+    </form>
+
+    <form action = "signup.php">
+            <button type="submit">Sign up</button>
+    </form>
+
+    <form action="homepage.php">
+        <button type="submit">Continue Anonymously</button>
     </form>
     
 </body>
