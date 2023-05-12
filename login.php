@@ -14,8 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $user = $result->fetch_assoc();
     
-    if ($user) {
-        
+    if ($user) { 
         if (password_verify($_POST["password"], $user["password_hash"])) {
             
             session_start();
@@ -58,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button>Log in</button>
     </form>
 
-    <form action = "signup.php">
+    <form action = "signup.html">
             <button type="submit">Sign up</button>
     </form>
 
