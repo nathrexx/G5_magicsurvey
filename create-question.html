@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get question</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+        <h1>Get question:</h1>
+    <form action="insert-question.php" method="post" id="question">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="Name" name="name">
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <input type="text" id="Description" name="description">
+        </div>
+
+        <div>
+            <label for="type">Type (multiple_answer, multiple_choice, yes_no, essay)</label>
+            <input type="text" id="Type" name="type">
+        </div>
+
+        <div>
+            <label for="option">Option</label>
+            <input type="text" id="Option" name="option">
+        </div>
+
+        <button type="submit">Done</button>
+    </form>
+
+</body>
+</html>

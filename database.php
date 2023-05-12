@@ -1,5 +1,6 @@
 <?php
 
+//Change $local to "localhost" if not working
 $host = "localhost";
 $dbname = "survey";
 $username = "root";

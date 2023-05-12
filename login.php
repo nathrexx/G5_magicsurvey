@@ -14,8 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $user = $result->fetch_assoc();
     
-    if ($user) {
-        
+    if ($user) { 
         if (password_verify($_POST["password"], $user["password_hash"])) {
             
             session_start();
@@ -31,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $is_invalid = true;
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,6 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="password" name="password" id="password">
         
         <button>Log in</button>
+    </form>
+
+    <form action = "signup.html">
+            <button type="submit">Sign up</button>
+    </form>
+
+    <form action="homepage.php">
+        <button type="submit">Continue Anonymously</button>
     </form>
     
 </body>
