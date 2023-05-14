@@ -113,7 +113,7 @@ if ($password_invalid == false and $phoneNum_invalid == false and $email_invalid
         echo "Error: " . mysqli_error($mysqli);
     }
 
-    header("Location: homepage.html");
+    header("Location: login.php");
 
     // Close the database connection
     $mysqli->close();

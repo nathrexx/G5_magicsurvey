@@ -20,9 +20,29 @@ $sql = "INSERT INTO questions (survey_id, name, description, type, options)
  
 // Construct an SQL query
 if (mysqli_query($mysqli, $sql)) {
-    echo "Data inserted successfully";
+    echo "Question insert successfully";
 } else {
     echo "Error: " . mysqli_error($mysqli);
 }
-exit;
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>more question</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <form action="create-question.html">
+        <button type="submit">Add more question</button>
+    </form>
+
+    <form action="homepage.html">
+        <button type="submit">Finish</button>
+    </form>
+
+</body>
+</html>
+
+
