@@ -19,12 +19,17 @@
         </div>
 
         <div>
-            <label for="type">Type (multiple_answer, multiple_choice, yes_no, essay)</label>
-            <input type="text" id="Type" name="type">
+            <label for="type">Type</label>
+            <select name="question-type" id="question-type">
+                <option value="multiple-answer">multiple answer</option>
+                <option value="multiple-choice">multiple choice</option>
+                <option value="yes-no">yes/no</option>
+                <option value="essay">essay</option>
+            </select>
         </div>
 
         <div>
-            <label for="option">Option</label>
+            <label for="option">Answer option(s)</label>
             <input type="text" id="Option" name="option">
         </div>
 

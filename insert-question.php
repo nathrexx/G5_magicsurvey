@@ -5,8 +5,15 @@ $mysqli = require __DIR__ . "/database.php";
 //Retrieve user input data
 $question_name = $_POST['name'];
 $question_description = $_POST['description'];
-$question_type = $_POST['type'];
+$question_type = $_POST['question-type'];
 $question_option = $_POST['option'];
+
+if ($question_type == "yes-no") {
+    $question_option = "Yes or No";
+}
+if ($question_type == "essay") {
+    $question_option = "Write an essay";
+}
 
 // Sanitize and validate input data
 $question_name = mysqli_real_escape_string($mysqli, $question_name);
