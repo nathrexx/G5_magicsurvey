@@ -130,7 +130,7 @@ if ($password_invalid == false and $phoneNum_invalid == false and $email_invalid
     <script src="/js/validation.js" defer></script>
 </head>
 <body>
-    <form action="signup.html" method="post" id="message" novalidate>
+    <form action="signup.html">
         <button>Sign up again</button>
     </form>
     

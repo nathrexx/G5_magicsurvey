@@ -48,10 +48,14 @@ if ($result) {
             }
         }
     ?>
-    <form action="participate-survey.html" method="post">
+    <form action="answer-survey.php" method="post" id="survey_code" novalidate>
         <label for="searchSurvey">Enter Survey Code to participate:</label>
         <input type="text" id="Code" name="code">
         <button type="submit">Start survey</button>
+    </form>
+
+    <form action="homepage.html">
+        <button type="submit">Back to homepage</button>
     </form>
 
 </body>
