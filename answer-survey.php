@@ -4,11 +4,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $survey_code = $_POST["code"];
 
     #Get survey's id:
-    $sql = "SELECT survey_id FROM surveys WHERE code = $survey_code";
+    $sql = "SELECT survey_id, is_active FROM surveys WHERE code = $survey_code";
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();
-    $survey_id = $row["survey_id"];
 
+    if ($row == NULL) {
+        echo "Error: Survey does not exit.<br>";
+        exit();
+    }
+    if ($row["is_active"] == 0) {
+        echo "Error: Survey no longer active.<br>";
+        exit();
+    }
+
+    $survey_id = $row["survey_id"];
     # Add a hidden input field to store the survey code
     echo "<input type='hidden' name='survey_code' value='$survey_code'>";
     

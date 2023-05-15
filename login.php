@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <button type="submit">Sign up</button>
     </form>
 
-    <form action="homepage.php">
+    <form action="homepage.html">
         <button type="submit">Continue Anonymously</button>
     </form>
     
