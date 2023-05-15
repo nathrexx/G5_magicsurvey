@@ -68,4 +68,4 @@ CREATE TABLE registered_respondent (
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-INSERT INTO USER(first_name, last_name, email, password_hash, phone_number) VALUES ('Admin', 'Database', '000@gmail.com', 'Abc@1234', '0000000000');
+INSERT INTO users(first_name, last_name, email, password_hash, phone_number) VALUES ('Admin', 'Database', '000@gmail.com', 'Abc@1234', '0000000000');
