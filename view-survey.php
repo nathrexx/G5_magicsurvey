@@ -21,37 +21,37 @@ if ($result) {
 </head>
 <body>
     <h1>View Survey</h1>
-    <label for="availableSurvey">Available Survey:</label>
-    <?php
-        date_default_timezone_set('America/Los_Angeles');
-        $currentDate = date("Y-m-d H:i:s");
-        echo "<br>Current time: $currentDate";
-        while ($row = mysqli_fetch_assoc($result)) {
-            $end_datetime = new DateTime($row["end_datetime"], new DatetimeZone('UTC'));
-            $end_datetime->setTimezone(new DateTimeZone('America/Los_Angeles'));
-            $end_datetime_string = $end_datetime->format('Y-m-d H:i:s');
-            $new_end_datetime = date("Y-m-d H-i-s", strtotime($end_datetime_string));
-            echo "<p>"."Code: ".$row["code"]
-            ."<br>Name: ".$row["name"]
-            ."<br>Description: ".$row["description"]
-            ."<br>Start: ".$row["start_datetime"]
-            ."<br>End: ".$row["end_datetime"];
-            if ($new_end_datetime >= $currentDate) {
-                $sql_temp = "UPDATE surveys SET is_active = '1' WHERE survey_id = ".$row["survey_id"];
-                mysqli_query($mysqli, $sql_temp);
-                echo "<br>Is active: Yes"."</p>";
-            }
-            else {
-                $sql_temp = "UPDATE surveys SET is_active = '0' WHERE survey_id = ".$row["survey_id"];
-                mysqli_query($mysqli, $sql_temp);
-                echo "<br>Is active: No"."</p>";
-            }
-        }
-    ?>
     <form action="answer-survey.php" method="post" id="survey_code" novalidate>
-        <label for="searchSurvey">Enter Survey Code to participate:</label>
-        <input type="text" id="Code" name="code">
-        <button type="submit">Start survey</button>
+        <label for="availableSurvey">Available Survey:</label>
+        <?php
+            date_default_timezone_set('America/Los_Angeles');
+            $currentDate = date("Y-m-d H:i:s");
+            echo "<br>Current time: $currentDate";
+            while ($row = mysqli_fetch_assoc($result)) {
+                $end_datetime = new DateTime($row["end_datetime"], new DatetimeZone('UTC'));
+                $end_datetime->setTimezone(new DateTimeZone('America/Los_Angeles'));
+                $end_datetime_string = $end_datetime->format('Y-m-d H:i:s');
+                $new_end_datetime = date("Y-m-d H-i-s", strtotime($end_datetime_string));
+                echo "<p>"."Code: ".$row["code"]
+                ."<br>Name: ".$row["name"]
+                ."<br>Description: ".$row["description"]
+                ."<br>Start: ".$row["start_datetime"]
+                ."<br>End: ".$row["end_datetime"];
+                if ($new_end_datetime >= $currentDate) {
+                    $sql_temp = "UPDATE surveys SET is_active = '1' WHERE survey_id = ".$row["survey_id"];
+                    mysqli_query($mysqli, $sql_temp);
+                    echo "<br>Is active: Yes"."</p>";
+                }
+                else {
+                    $sql_temp = "UPDATE surveys SET is_active = '0' WHERE survey_id = ".$row["survey_id"];
+                    mysqli_query($mysqli, $sql_temp);
+                    echo "<br>Is active: No"."</p>";
+                }
+            }
+        ?>
+            <label for="searchSurvey">Enter Survey Code to participate:</label>
+            <input type="text" name="code" id="Code">
+            <button>Start survey</button>
     </form>
 
     <form action="homepage.html">
